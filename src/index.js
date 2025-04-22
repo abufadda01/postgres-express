@@ -3,6 +3,7 @@ import cors from "cors"
 import dotenv from "dotenv"
 import userRoutes from "./routes/user.routes.js"
 import errorHandler from "./middlewares/errorHandler.js"
+import createUserTable from "./data/createUserTable.js"
 
 dotenv.config()
 
@@ -14,9 +15,11 @@ app.use(express.json())
 app.use(cors())
 
 
+
 app.use("/api/v1/users" , userRoutes)
 
 
+createUserTable()
 
 app.use(errorHandler)
 

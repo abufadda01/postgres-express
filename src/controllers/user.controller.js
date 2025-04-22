@@ -8,6 +8,7 @@ export const createUser = async (req , res , next) => {
         const newUser = await createUserService(name , email)
         handleResposne(res , 201 , "User Created successfully" , newUser)
     } catch (error) {
+        console.log(error)
         next(error)
     }
 }
@@ -25,7 +26,7 @@ export const getAllUsers = async (req , res , next) => {
 
 
 
-export const getUserById = async (req , res , next) => {
+export const getUserById = async (req , res , next) => { 
     try {
         const user = await getUserByIdService(req.params.id)
         if(!user) handleResposne(res , 404 , "User Not Found")

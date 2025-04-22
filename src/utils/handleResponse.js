@@ -6,6 +6,6 @@ const handleResposne = (res , status , message , data = null    ) => {
         data
     })
 }
-
+ 
 
 export default handleResposne
